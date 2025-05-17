@@ -4,6 +4,8 @@ import CryptoList from "./components/CryptoList";
 
 const App = () => {
   const [coinsData, setCoinsData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(8);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,10 +22,14 @@ const App = () => {
     fetchData();
   }, []);
 
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
+
   return (
     <div className="dark bg-black text-white min-h-screen p-8">
       <h1 className="text-4xl font-bold mb-6 text-center">Crypto Gallery</h1>
-      <CryptoList coinsData={coinsData} />
+      <CryptoList coinsData={currentPosts} />
     </div>
   );
 };
