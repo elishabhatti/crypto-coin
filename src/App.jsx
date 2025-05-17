@@ -35,6 +35,7 @@ const App = () => {
         totalPosts={coinsData.length}
         postPerPage={postPerPage}
         setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
       />
     </div>
   );
