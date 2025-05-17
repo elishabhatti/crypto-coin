@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CryptoList from "./components/CryptoList";
+import Pagination from "./components/Pagination";
 
 const App = () => {
   const [coinsData, setCoinsData] = useState([]);
@@ -30,6 +31,7 @@ const App = () => {
     <div className="dark bg-black text-white min-h-screen p-8">
       <h1 className="text-4xl font-bold mb-6 text-center">Crypto Gallery</h1>
       <CryptoList coinsData={currentPosts} />
+      <Pagination totalPosts={coinsData.length} postPerPage={postPerPage} />
     </div>
   );
 };
