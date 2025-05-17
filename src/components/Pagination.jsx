@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pagination = ({ totalPosts, postPerPage }) => {
+const Pagination = ({ totalPosts, postPerPage, setCurrentPage }) => {
   let pages = [];
   for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
     pages.push(i);
@@ -11,6 +11,7 @@ const Pagination = ({ totalPosts, postPerPage }) => {
       {pages.map((page, index) => {
         return (
           <button
+          onClick={() => setCurrentPage(page)}
             key={index}
             className="px-4 py-2 rounded-md border border-white/20 text-white bg-black hover:bg-white hover:text-black transition dark:bg-black dark:text-white dark:border-white/20 dark:hover:bg-white dark:hover:text-black"
           >
