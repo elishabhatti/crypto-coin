@@ -1,6 +1,6 @@
 import React from "react";
 
-const CoinsDetails = ({selectedCoin}) => {
+const CoinsDetails = ({ selectedCoin, setSelectedCoin }) => {
   return (
     <div>
       {selectedCoin && (
