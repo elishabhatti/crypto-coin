@@ -9,7 +9,7 @@ const CoinsDetails = ({ selectedCoin, setSelectedCoin }) => {
             <h2 className="text-xl font-bold">{selectedCoin.name} Details</h2>
             <button
               onClick={() => setSelectedCoin(null)}
-              className="text-red-400 hover:underline text-sm"
+              className="text-red-400 cursor-pointer hover:underline text-sm"
             >
               Close
             </button>
