@@ -19,9 +19,11 @@ const Pagination = ({
             onClick={() => setCurrentPage(page)}
             key={index}
             className={`px-4 py-2 cursor-pointer rounded-md border border-white/20 transition
-              ${page === currentPage
-                ? "bg-white text-black"
-                : "bg-black text-white hover:bg-white hover:text-black"}
+              ${
+                page === currentPage
+                  ? "bg-white text-black"
+                  : "bg-black text-white hover:bg-white hover:text-black"
+              }
                `}
           >
             {page}
